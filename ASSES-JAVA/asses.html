@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: antiquewhite;
+      }
+
+      .Main1 {
+        margin: auto;
+        height: auto;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      #text {
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        border: 2px solid;
+        font-size: 15px;
+        text-decoration: solid;
+      }
+
+      #text::placeholder {
+        padding: 20px;
+      }
+
+      #btn {
+        height: 45px;
+        width: 90px;
+        border-radius: 5px;
+        background-color: goldenrod;
+        font-size: 13px;
+        font-weight: 600;
+        border: 2px solid yellow;
+      }
+
+      #item {
+        height: auto;
+        width: 250px;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      #itemList {
+        text-align: center;
+        text-decoration: none;
+
+      }
+
+      #itemList li {
+        font-size: 20px;
+        padding-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Main1">
+      <div class="Input">
+        <input type="text" id="text" />
+        <button id="btn">ADD ITEM</button>
+      </div>
+
+      <div id="item">
+        <h4>NEW ITEM</h4>
+        <ul id="itemList"></ul>
+      </div>
+    </div>
+
+    <script>
+      let input = document.querySelector("#text");
+      let button = document.querySelector("#btn");
+      let itemList = document.querySelector("#itemList");
+      let userId = 1;
+
+      button.addEventListener("click", () => { 
+        itemList.innerHTML += `<li>${input.value}</li> <hr>`; 
+          localStorage.setItem(id, input.value); 
+          userId++;  
+          input.value = ""; 
+      });
+    </script>
+  </body>
+</html>
